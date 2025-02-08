@@ -1,0 +1,241 @@
+/***************************************
+ *
+ *          MENU EXPLICATIVO         
+ * 1. Ajustes de temas (Oscuro/Claro)
+ * 2. Estilos generales
+ * 3. Estilos de Toast
+ * 4. Alternar tema
+ *
+ * © DioverDM - DIOVERDM.COM
+ * 
+ **************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
+
+/***************************************
+ * 1. Ajustes de temas (Oscuro/Claro)
+***************************************/
+:root {
+  --toast-bg: rgba(18, 18, 18, 0.5);
+  --toast-title: #fff;
+  --toast-message: #e0e0e0;
+  --toast-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  --transition: all 0.3s ease;
+}
+
+[data-theme="light"] {
+  --toast-bg: rgba(245, 245, 245, 0.8);
+  --toast-title: #333333;
+  --toast-message: #34495e;
+  --toast-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/***************************************
+ * 2. Estilos generales
+***************************************/
+html, body{
+  height:100%;
+  width:100%;
+  font-family: 'Raleway', sans-serif;
+  background: url('bg.jpg') center/cover;
+  display: table;
+  text-align: center;
+
+}
+
+.toast__container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.toast__cell{
+  display:inline-block;
+}
+
+.add-margin{
+  margin-top:20px;
+}
+
+.toast__svg{
+  fill:#fff;
+}
+
+/***************************************
+ * 3. Estilos de Toast
+***************************************/
+.toast {
+  text-align:left;
+    padding: 10px 0;/*max: 21px 0px*/
+    background-color: var(--toast-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    max-width: 500px;
+    top: 0px;
+    position: relative;
+    display: none;/*oculto por defecto*/
+    box-shadow: var(--toast-shadow);
+    transition: var(--transition);
+}
+
+/* Barra lateral */
+.toast:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Mostrar el Toast */
+.toast.show {
+  display: flex;
+}
+
+/* Contenedor del Toast */
+.toast__content{
+  padding-left:70px;
+  padding-right:60px;
+}
+
+/* Icono del Toast */
+.toast__icon{
+  position:absolute;
+  top:50%;
+  left:22px;
+  transform:translateY(-50%);
+  width:14px;
+  height:14px;
+  padding: 7px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+.toast__svg{
+  fill:#fff;
+}
+
+/* Tipo del Toast: Danger, Warnning, Succes, Info*/
+.toast__type {
+  color: var(--toast-title);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+
+/* Mensaje del Toast*/
+.toast__message {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--toast-message);
+    transition: var(--transition);
+}
+
+/* Icono para cerrar el Toast*/
+.toast__close {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 14px;
+    cursor:pointer;
+    height: 14px;
+    /*fill: #878787;*/
+    fill: var(--toast-message);
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.toast__close2 {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 14px;
+    cursor:pointer;
+    height: 14px;
+    fill: var(--toast-message);
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.toast__close3 {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    width: 14px;
+    cursor:pointer;
+    height: 14px;
+    fill: var(--toast-message);
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+/* Color del Icono del Toast */
+.toast__success .toast__icon{
+  background-color:#2BDE3F;
+}
+
+.toast__success:before{
+  background-color:#2BDE3F;
+}
+
+.toast__info .toast__icon{
+  background-color:#1D72F3;
+}
+
+.toast__info:before{
+  background-color:#1D72F3;
+}
+
+.toast__warnning .toast__icon{
+  background-color:#FFC007;
+}
+
+.toast__warnning:before{
+  background-color:#FFC007;
+}
+
+/* Barra de progreso */
+.toast__progress {
+  height: 5px;
+  width: 0%;
+  transition: width 0.5s ease;
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.toast__progress.success {
+  background: linear-gradient(45deg, rgba(43, 222, 63, 0.2), #2BDE3F);
+}
+
+.toast__progress.info {
+  background: linear-gradient(45deg, rgba(29, 114, 243, 0.2), #1D72F3);
+}
+
+.toast__progress.warnning {
+  background: linear-gradient(45deg, rgba(255, 192, 7, 0.2), #FFC007);
+}
+
+.toast__progress.full {
+  background-color: #007bff;
+  width: 100%;
+}
+
+/***************************************
+ * 4. Alternar tema
+***************************************/
+#theme__toggle {
+    border: none;
+    width: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
