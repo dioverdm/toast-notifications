@@ -10,6 +10,10 @@ Este repositorio contiene un conjunto de toast notifications personalizables y f
 - **Fácil de integrar**: Solo necesitas incluir los archivos CSS y JavaScript.
 - **Responsivo**: Diseño adaptable a cualquier dispositivo.
 
+## Demostración
+
+[![Ver video de demostración](./ruta/a/la/miniatura.jpg)](demo.mp4)
+
 ## Instalación
 
 Para usar estas toast notifications en tu proyecto, sigue estos pasos:
