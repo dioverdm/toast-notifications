@@ -12,7 +12,7 @@ Este repositorio contiene un conjunto de toast notifications personalizables y f
 
 ## Demostración
 
-[![Ver video de demostración](./demo.jpg)]
+[Ver video de demostración](./demo.jpg)
 
 ## Instalación
 
